@@ -63,7 +63,6 @@ class DangerTyping:
             self.controller.config(bg=self.color_range[t - 1])
             self.danger_label.config(text=t, bg=self.color_range[t - 1])
             self.timer_label.config(bg=self.color_range[t - 1])
-
             self.danger_timer = self.controller.after(1000, self.danger_countdown, t - 1)
             t -= 1
         else:
@@ -76,7 +75,7 @@ class DangerTyping:
     def start_app(self):
         """Start Mechanism"""
         self.input_text.focus_set() # Sents the focus on the text box
-        self.countdown(t=10) # Can change to what you want here, default 1 min   
+        self.countdown(t=60) # Can change to what you want here, default 1 min   
         self.danger_countdown(5)
     
     def reset_app(self):
